@@ -16,12 +16,12 @@ body {
   top: 0;
   left: 0;
   width: 90px;
-  height: 100%;
+  min-height: 100%;
 }
 
 .container {
   max-width: 1800px;
-  padding: 60px;
+  padding: 60px 0px;
   margin: 0 auto;
   min-height: inherit;
 }
@@ -57,6 +57,8 @@ body {
 }
 
 .swiper-pagination {
+  position: relative !important;
+  margin-top: 20px;
 }
 
 ::-webkit-scrollbar {
@@ -69,4 +71,8 @@ body {
 
 ::-webkit-scrollbar-thumb {
   background: #5473e8;
+}
+
+.content__slide {
+  padding: 0px 65px 20px 65px;
 }

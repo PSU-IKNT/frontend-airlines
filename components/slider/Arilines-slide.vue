@@ -1,5 +1,5 @@
 <template>
-  <div class="airlines__slide">
+  <div class="content__slide">
     <!-- <div>Подождите, идет загрузка данных</div> -->
     <div class="airlines-info">
       <h1 class="text-4xl mb-5">
@@ -120,9 +120,6 @@ onBeforeUnmount(() => {
 });
 </script>
 <style scoped>
-.airlines__slide {
-  padding: 65px 30px;
-}
 .airlines-info {
 }
 .airlines-info__wrapper {
