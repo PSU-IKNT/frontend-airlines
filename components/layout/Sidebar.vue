@@ -25,7 +25,7 @@ const pages = ref([
 	{
 		name: "page1",
 		path: "/",
-		isClicked: true,
+		isClicked: false,
 	},
 	{
 		name: "page2",
@@ -34,16 +34,21 @@ const pages = ref([
 	},
 ]);
 
-const selectPage = page => {
-	if (page.isClicked === true) {
-		return;
-	} else {
-		pages.value.forEach(el => {
-			el.isClicked = false;
-		});
-		page.isClicked = true;
-	}
+const selectPage = selectedPage => {
+	pages.value.forEach(page => {
+		page.isClicked = page.path === selectedPage.path;
+	});
 };
+
+const route = useRoute();
+
+pages.value.forEach(page => {
+	if (page.path === route.path) {
+		page.isClicked = true;
+	} else {
+		page.isClicked = false;
+	}
+});
 </script>
 
 <style>
