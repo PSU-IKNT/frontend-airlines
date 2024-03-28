@@ -236,7 +236,7 @@ const error = ref(null);
 const companies = ref([]);
 const clonedCompanies = ref([]);
 axios
-  .get("http://85.193.81.44:8083/api/v1/flights?pageNumber=0&pageSize=10", {
+  .get("http://85.193.81.44:8083/api/v1/flights?pageNumber=0&pageSize=100", {
     mode: "no-cors",
   })
   .then((response) => {
