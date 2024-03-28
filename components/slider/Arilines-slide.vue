@@ -68,13 +68,15 @@
   </div>
 </template>
 <script setup>
-defineProps({
+const props = defineProps({
   apiData: Object,
   index: Number,
 });
 
-// const delays = apiData.arrivalRating;
-// const onTime = apiData.offTimeDepartures;
+const delays = props.apiData.airline_ratings[props.index].offTimeArrivals;
+const onTime = props.apiData.airline_ratings[props.index].offTimeDepartures;
+
+console.log(delays);
 
 import { ref, onMounted, onBeforeUnmount } from "vue";
 import Chart from "chart.js/auto";
@@ -84,7 +86,7 @@ const chartData = ref({
   datasets: [
     {
       label: "Количество",
-      data: [100, 50],
+      data: [delays, onTime],
       backgroundColor: ["#5473E8", "rgb(54, 162, 235)"],
     },
   ],
