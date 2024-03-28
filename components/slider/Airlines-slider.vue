@@ -9,8 +9,8 @@
     }"
     class="main-slider__slider"
   >
-    <swiper-slide v-if="data">
-      <ArilinesSlide :index="0" :data="data.value" />
+    <swiper-slide v-if="data" v-for="(item, index, num) in data" :key="index">
+      <ArilinesSlide :index="num" :apiData="data" />
     </swiper-slide>
   </swiper>
 </template>
@@ -32,7 +32,6 @@ axios
   .get("http://85.193.81.44:8085/api/v2/overall_rating")
   .then((response) => {
     data.value = response.data;
-    console.log(data.value);
     console.log(data.value);
   })
   .catch((err) => {

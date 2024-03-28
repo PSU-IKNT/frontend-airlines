@@ -1,9 +1,10 @@
 <template>
   <div class="airlines__slide">
+    <!-- <div>Подождите, идет загрузка данных</div> -->
     <div class="airlines-info">
       <h1 class="text-4xl mb-5">
         Данные об авикомпании
-        <!-- {{ apiData.airline_ratings[index]?.airlineIataCode }} -->
+        {{ apiData.airline_ratings[index].airlineIataCode }}
       </h1>
       <div class="airlines-info__wrapper">
         <div class="airlines-info__column">
@@ -80,6 +81,31 @@ const chartData = ref({
 
 const chartCanvas = ref(null);
 let myChart;
+
+// import axios from "axios";
+
+// const state = reactive({
+//   loading: true,
+// });
+
+// const data = ref(null);
+// const error = ref(null);
+
+// axios
+//   .get("http://85.193.81.44:8085/api/v2/overall_rating")
+//   .then((response) => {
+//     data.value = response.data;
+//     console.log(data.value);
+//     console.log(data.value);
+//     console.log(data.value);
+//     console.log(data.value);
+//     console.log(data.value);
+//     state.loading = false;
+//   })
+//   .catch((err) => {
+//     error.value = err;
+//     console.error("Error fetching data:", err);
+//   });
 
 onMounted(() => {
   myChart = new Chart(chartCanvas.value, {
