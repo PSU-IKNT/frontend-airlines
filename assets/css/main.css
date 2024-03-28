@@ -23,7 +23,6 @@ body {
   max-width: 1800px;
   padding: 60px;
   margin: 0 auto;
-  border: 1px solid #000;
   min-height: inherit;
 }
 .swiper {
@@ -58,4 +57,16 @@ body {
 }
 
 .swiper-pagination {
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: darkgrey;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #5473e8;
 }
