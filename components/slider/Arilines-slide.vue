@@ -22,13 +22,42 @@
           </div>
           <div class="airlines__block">
             <h2 class="text-2xl mb-3">Диаграмма</h2>
+            <canvas class="pie-chart" ref="chartCanvas"></canvas>
           </div>
         </div>
       </div>
     </div>
   </div>
 </template>
-<script setup></script>
+<script setup>
+import { ref, onMounted, onBeforeUnmount } from "vue";
+import Chart from "chart.js/auto";
+
+const chartData = ref({
+  labels: ["Количество опозданий  ", "Количество прибытий во время "],
+  datasets: [
+    {
+      label: "My First Dataset",
+      data: [300, 50],
+      backgroundColor: ["rgb(255, 99, 132)", "rgb(54, 162, 235)"],
+    },
+  ],
+});
+
+const chartCanvas = ref(null);
+let myChart;
+
+onMounted(() => {
+  myChart = new Chart(chartCanvas.value, {
+    type: "pie",
+    data: chartData.value,
+  });
+});
+
+onBeforeUnmount(() => {
+  myChart.destroy();
+});
+</script>
 <style scoped>
 .airlines__slide {
   padding: 65px 30px;
@@ -63,6 +92,11 @@
   font-size: 20px;
 }
 .rating-sub__text {
+}
+
+.pie-chart {
+  width: 250px !important;
+  height: 250px !important;
 }
 .rating-sub__info {
 }
