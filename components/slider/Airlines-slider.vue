@@ -9,8 +9,12 @@
     }"
     class="main-slider__slider"
   >
-    <swiper-slide v-if="data" v-for="(item, index, num) in data" :key="index">
-      <ArilinesSlide :index="num" :apiData="data" />
+    <swiper-slide
+      v-if="data"
+      v-for="(item, index) in data.airline_ratings"
+      :key="index"
+    >
+      <ArilinesSlide :index="index" :apiData="data" />
     </swiper-slide>
   </swiper>
 </template>
