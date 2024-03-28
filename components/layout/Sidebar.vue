@@ -1,5 +1,5 @@
 <template>
-  <aside class="my-blue-bg flex flex-col items-end py-2 flex-auto">
+  <aside class="my-blue-bg flex flex-col items-end py-2 flex-auto menu">
     <NuxtLink
       v-for="page in pages"
       @click="selectPage(page)"
