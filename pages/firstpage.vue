@@ -17,6 +17,7 @@ axios
   .then((response) => {
     // Note: With 'no-cors' mode, you won't be able to access the response data
     data.value = response;
+    console.log(data.value.data);
   })
   .catch((err) => {
     error.value = err;
