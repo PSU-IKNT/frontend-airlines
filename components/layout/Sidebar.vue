@@ -22,6 +22,7 @@
 // ! Все новые страницы добавлять/изменять здесь
 // Поумолчанию всегда активна только первая страница, у остальных isClicked: false
 const pages = ref([
+<<<<<<< HEAD
   {
     name: "page1",
     path: "/",
@@ -43,7 +44,35 @@ const selectPage = (page) => {
     });
     page.isClicked = true;
   }
+=======
+	{
+		name: "page1",
+		path: "/",
+		isClicked: false,
+	},
+	{
+		name: "page2",
+		path: "/firstpage",
+		isClicked: false,
+	},
+]);
+
+const selectPage = selectedPage => {
+	pages.value.forEach(page => {
+		page.isClicked = page.path === selectedPage.path;
+	});
+>>>>>>> origin/in-development
 };
+
+const route = useRoute();
+
+pages.value.forEach(page => {
+	if (page.path === route.path) {
+		page.isClicked = true;
+	} else {
+		page.isClicked = false;
+	}
+});
 </script>
 
 <style>
