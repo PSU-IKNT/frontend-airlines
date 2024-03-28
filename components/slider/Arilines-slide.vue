@@ -13,15 +13,24 @@
             <div class="airlines__table table-airlines">
               <div class="table-airlines__row">
                 <div class="table-airlines__title">Количество полётов</div>
+                {{ apiData.airline_ratings[index].totalFlights }}
                 <div class="table-airlines__row"></div>
               </div>
               <div class="table-airlines__row">
-                <div class="table-airlines__title">Количество полётов</div>
-                <div class="table-airlines__row"></div>
+                <div class="table-airlines__title">
+                  Количество опозданий по прибытии
+                </div>
+                <div class="table-airlines__row">
+                  {{ apiData.airline_ratings[index].offTimeArrivals }}
+                </div>
               </div>
               <div class="table-airlines__row">
-                <div class="table-airlines__title">Количество полётов</div>
-                <div class="table-airlines__row"></div>
+                <div class="table-airlines__title">
+                  Количество отправлений не по расписанию
+                </div>
+                <div class="table-airlines__row">
+                  {{ apiData.airline_ratings[index].offTimeDepartures }}
+                </div>
               </div>
             </div>
           </div>
@@ -30,18 +39,20 @@
           <div class="airlines__block">
             <h2 class="text-2xl mb-3">Рейтинг авиакомпании</h2>
             <div class="airlines__rating text-6xl mb-3">
-              <!-- {{ apiData.airline_ratings[0].midRating }} -->
+              {{ roundRating(apiData.airline_ratings[index].midRating) }}%
             </div>
             <div class="rating-sub">
               <div class="rating-sub__text">Рейтинг отправления</div>
               <div class="rating-sub__info">
-                <!-- {{ apiData.airline_ratings[index]?.departureRating }} -->
+                {{
+                  roundRating(apiData.airline_ratings[index].departureRating)
+                }}%
               </div>
             </div>
             <div class="rating-sub">
-              <div class="rating-sub__text">Рейтинг отправления</div>
+              <div class="rating-sub__text">Рейтинг прибытия</div>
               <div class="rating-sub__info">
-                <!-- {{ apiData.airline_ratings[index]?.arrivalRating }} -->
+                {{ roundRating(apiData.airline_ratings[index].arrivalRating) }}%
               </div>
             </div>
           </div>
@@ -82,30 +93,10 @@ const chartData = ref({
 const chartCanvas = ref(null);
 let myChart;
 
-// import axios from "axios";
-
-// const state = reactive({
-//   loading: true,
-// });
-
-// const data = ref(null);
-// const error = ref(null);
-
-// axios
-//   .get("http://85.193.81.44:8085/api/v2/overall_rating")
-//   .then((response) => {
-//     data.value = response.data;
-//     console.log(data.value);
-//     console.log(data.value);
-//     console.log(data.value);
-//     console.log(data.value);
-//     console.log(data.value);
-//     state.loading = false;
-//   })
-//   .catch((err) => {
-//     error.value = err;
-//     console.error("Error fetching data:", err);
-//   });
+const roundRating = (number) => {
+  number = Math.round(number * 1000) / 1000;
+  return number;
+};
 
 onMounted(() => {
   myChart = new Chart(chartCanvas.value, {
