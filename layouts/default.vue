@@ -1,8 +1,10 @@
 <template>
   <section class="my-grid min-h-screen">
     <LayoutSidebar />
-    <div class="p-5 my-white-bg">
-      <slot />
+    <div class="my-white-bg">
+      <div class="container">
+        <slot />
+      </div>
     </div>
   </section>
 </template>

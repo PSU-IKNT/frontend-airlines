@@ -1,3 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.container {
+  max-width: 1800px;
+  padding: 60px;
+  margin: 0 auto;
+  border: 1px solid #000;
+  min-height: inherit;
+}
+.swiper {
+  margin: 0 !important;
+}
+
+.airlines__block {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 10px 10px 10px;
+}
