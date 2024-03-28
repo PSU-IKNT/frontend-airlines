@@ -10,7 +10,7 @@
 					class="flex items-center justify-center gap-2 cursor-pointer select-none"
 					@click="sortByAlphabet('airlineIataCode')"
 				>
-					<div class="max-w-28">Компания</div>
+					<div class="max-w-28 text-center">Компания</div>
 					<svg
 						width="16"
 						height="8"
@@ -34,7 +34,7 @@
 					class="flex items-center justify-center gap-2 cursor-pointer select-none"
 					@click="sortByAlphabet('flight')"
 				>
-					<div class="max-w-28">Номер рейса</div>
+					<div class="max-w-28 text-center">Номер рейса</div>
 					<svg
 						width="16"
 						height="8"
@@ -58,7 +58,7 @@
 					class="flex items-center justify-center gap-2 cursor-pointer select-none"
 					@click="sortByAlphabet('arrivalAirport')"
 				>
-					<div class="max-w-28">Место вылета</div>
+					<div class="max-w-28 text-center">Место вылета</div>
 					<svg
 						width="16"
 						height="8"
@@ -82,7 +82,7 @@
 					class="flex items-center justify-center gap-2 cursor-pointer select-none"
 					@click="sortByAlphabet('departureAirport')"
 				>
-					<div class="max-w-28">Место посадки</div>
+					<div class="max-w-28 text-center">Место посадки</div>
 					<svg
 						width="16"
 						height="8"
@@ -106,7 +106,7 @@
 					class="flex items-center justify-center gap-2 cursor-pointer select-none"
 					@click="sortByAlphabet('factArrival')"
 				>
-					<div class="max-w-28">Фактическое прибытие</div>
+					<div class="max-w-28 text-center">Фактическое прибытие</div>
 					<svg
 						width="16"
 						height="8"
@@ -130,7 +130,7 @@
 					class="flex items-center justify-center gap-2 cursor-pointer select-none"
 					@click="sortByAlphabet('factDeparture')"
 				>
-					<div class="max-w-28">Фактические отъезд</div>
+					<div class="max-w-28 text-center">Фактические отъезд</div>
 					<svg
 						width="16"
 						height="8"
@@ -154,7 +154,7 @@
 					class="flex items-center justify-center gap-2 cursor-pointer select-none"
 					@click="sortByAlphabet('planArrival')"
 				>
-					<div class="max-w-28">Планируемое прибытие</div>
+					<div class="max-w-28 text-center">Планируемое прибытие</div>
 					<svg
 						width="16"
 						height="8"
@@ -178,7 +178,7 @@
 					class="flex items-center justify-center gap-2 cursor-pointer select-none"
 					@click="sortByAlphabet('planDeparture')"
 				>
-					<div class="max-w-28">Планируемый отъезд</div>
+					<div class="max-w-28 text-center">Планируемый отъезд</div>
 					<svg
 						width="16"
 						height="8"
@@ -200,7 +200,7 @@
 				</div>
 			</div>
 
-			<div ref="animation">
+			<div ref="animation" class=" max-h-[600px] overflow-y-scroll"">
 				<div
 					v-for="company in companies"
 					class="flex justify-between break-words items-center px-6 py-7"
