@@ -200,18 +200,20 @@
 				</div>
 			</div>
 
-			<div
-				v-for="company in companies"
-				class="flex justify-between break-words items-center px-6 py-7"
-			>
-				<div class="max-w-28">{{ company.airlineIataCode }}</div>
-				<div class="max-w-28">{{ company.flight }}</div>
-				<div class="max-w-28">{{ company.arrivalAirport }}</div>
-				<div class="max-w-28">{{ company.departureAirport }}</div>
-				<div class="max-w-28">{{ formatDate(company.factArrival) }}</div>
-				<div class="max-w-28">{{ formatDate(company.factDeparture) }}</div>
-				<div class="max-w-28">{{ formatDate(company.planArrival) }}</div>
-				<div class="max-w-28">{{ formatDate(company.planDeparture) }}</div>
+			<div ref="animation">
+				<div
+					v-for="company in companies"
+					class="flex justify-between break-words items-center px-6 py-7"
+				>
+					<div class="max-w-28">{{ company.airlineIataCode }}</div>
+					<div class="max-w-28">{{ company.flight }}</div>
+					<div class="max-w-28">{{ company.arrivalAirport }}</div>
+					<div class="max-w-28">{{ company.departureAirport }}</div>
+					<div class="max-w-28">{{ formatDate(company.factArrival) }}</div>
+					<div class="max-w-28">{{ formatDate(company.factDeparture) }}</div>
+					<div class="max-w-28">{{ formatDate(company.planArrival) }}</div>
+					<div class="max-w-28">{{ formatDate(company.planDeparture) }}</div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -219,6 +221,9 @@
 
 <script setup>
 import axios from "axios";
+import { useAutoAnimate } from "@formkit/auto-animate/vue";
+
+const [animation] = useAutoAnimate();
 
 const data = ref(null);
 const error = ref(null);

@@ -1,14 +1,14 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-    devtools: { enabled: false },
+	devtools: { enabled: false },
 
-    postcss: {
+	postcss: {
 		plugins: {
 			tailwindcss: {},
 			autoprefixer: {},
 		},
 	},
 
-    css: ["~/assets/css/main.css"],
-    modules: ["@nuxt/image"]
+	css: ["~/assets/css/main.css"],
+	modules: ["@nuxt/image"],
 });
