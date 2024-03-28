@@ -39,11 +39,23 @@ body {
 
 .airlines__block {
   background-color: #fff;
-  padding: 20px;
+  padding: 40px;
   border-radius: 20px;
   -webkit-box-shadow: 4px 3px 23px 5px rgba(0, 0, 0, 0.24);
   box-shadow: 4px 3px 12px 5px rgba(0, 0, 0, 0.24);
 }
 
 .swiper-wrapper {
+}
+
+.swiper-horizontal
+  > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic
+  .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic
+  .swiper-pagination-bullet {
+  padding: 15px;
+  background: #5473e8;
+}
+
+.swiper-pagination {
 }

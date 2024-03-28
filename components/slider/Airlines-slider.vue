@@ -1,5 +1,14 @@
 <template>
-  <swiper :slides-per-view="1" :space-between="50" class="main-slider__slider">
+  <swiper
+    :slides-per-view="1"
+    :space-between="50"
+    :modules="modules"
+    :pagination="{
+      clickable: true,
+      dynamicBullets: true,
+    }"
+    class="main-slider__slider"
+  >
     <swiper-slide>
       <ArilinesSlide />
     </swiper-slide>
