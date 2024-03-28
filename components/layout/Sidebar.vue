@@ -1,5 +1,5 @@
 <template>
-  <aside class="my-blue-bg flex flex-col items-end py-2 flex-auto menu">
+  <aside class="my-blue-bg flex flex-col items-end py-2 flex-auto">
     <NuxtLink
       v-for="page in pages"
       @click="selectPage(page)"
@@ -13,8 +13,8 @@
     </NuxtLink>
 
     <!-- <NuxtLink class="self-end min-w-[90%] rounded-l-lg" to="/firstpage">
-			<LayoutSidebarItem />
-		</NuxtLink> -->
+      <LayoutSidebarItem />
+    </NuxtLink> -->
   </aside>
 </template>
 
@@ -22,11 +22,10 @@
 // ! Все новые страницы добавлять/изменять здесь
 // Поумолчанию всегда активна только первая страница, у остальных isClicked: false
 const pages = ref([
-<<<<<<< HEAD
   {
     name: "page1",
     path: "/",
-    isClicked: true,
+    isClicked: false,
   },
   {
     name: "page2",
@@ -35,43 +34,20 @@ const pages = ref([
   },
 ]);
 
-const selectPage = (page) => {
-  if (page.isClicked === true) {
-    return;
-  } else {
-    pages.value.forEach((el) => {
-      el.isClicked = false;
-    });
-    page.isClicked = true;
-  }
-=======
-	{
-		name: "page1",
-		path: "/",
-		isClicked: false,
-	},
-	{
-		name: "page2",
-		path: "/firstpage",
-		isClicked: false,
-	},
-]);
-
-const selectPage = selectedPage => {
-	pages.value.forEach(page => {
-		page.isClicked = page.path === selectedPage.path;
-	});
->>>>>>> origin/in-development
+const selectPage = (selectedPage) => {
+  pages.value.forEach((page) => {
+    page.isClicked = page.path === selectedPage.path;
+  });
 };
 
 const route = useRoute();
 
-pages.value.forEach(page => {
-	if (page.path === route.path) {
-		page.isClicked = true;
-	} else {
-		page.isClicked = false;
-	}
+pages.value.forEach((page) => {
+  if (page.path === route.path) {
+    page.isClicked = true;
+  } else {
+    page.isClicked = false;
+  }
 });
 </script>
 
@@ -97,13 +73,5 @@ pages.value.forEach(page => {
   height: 113%;
   width: 6px;
   border-radius: 10px;
-}
-
-.menu {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 90px;
-  height: 100%;
 }
 </style>
