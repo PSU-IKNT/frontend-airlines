@@ -58,9 +58,10 @@
             </div>
           </div>
           <div class="airlines__block">
-            <h2 class="text-2xl mb-3">Диаграмма</h2>
+            <h2 class="text-2xl mb-3">Диаграммы</h2>
             <div class="chart__wrapper">
               <canvas class="pie-chart" ref="chartCanvas"></canvas>
+              <canvas class="pie-chart" ref="chartCanvas2"></canvas>
             </div>
           </div>
         </div>
@@ -74,27 +75,47 @@ const props = defineProps({
   index: Number,
 });
 
-const delays = props.apiData.airline_ratings[props.index].offTimeArrivals;
-const onTime = props.apiData.airline_ratings[props.index].offTimeDepartures;
+const offTimeArrivals =
+  props.apiData.airline_ratings[props.index].offTimeArrivals;
+const onTimeArrivals =
+  props.apiData.airline_ratings[props.index].onTimeArrivals;
 
-console.log(delays);
+const offTimeDepartures =
+  props.apiData.airline_ratings[props.index].offTimeDepartures;
+const onTimeDepartures =
+  props.apiData.airline_ratings[props.index].onTimeDepartures;
 
 import { ref, onMounted, onBeforeUnmount } from "vue";
 import Chart from "chart.js/auto";
 
 const chartData = ref({
-  labels: ["Количество опозданий ", "Количество прибытий во время "],
+  labels: [
+    "Количество задержек в отправлении ",
+    "Количество отправлений во время ",
+  ],
   datasets: [
     {
       label: "Количество",
-      data: [delays, onTime],
+      data: [offTimeDepartures, onTimeDepartures],
       backgroundColor: ["#5473E8", "rgb(54, 162, 235)"],
+    },
+  ],
+});
+const chartData2 = ref({
+  labels: ["Количество опозданий в прибытии ", "Количество прибытий во время "],
+  datasets: [
+    {
+      label: "Количество",
+      data: [offTimeArrivals, onTimeArrivals],
+      backgroundColor: ["#5470E8", "rgb(54, 162, 235)"],
     },
   ],
 });
 
 const chartCanvas = ref(null);
+const chartCanvas2 = ref(null);
 let myChart;
+let myChart2;
 
 const roundRating = (number) => {
   number = Math.round(number * 1000) / 1000;
@@ -113,6 +134,17 @@ onMounted(() => {
       },
     },
   });
+  myChart2 = new Chart(chartCanvas2.value, {
+    type: "pie",
+    data: chartData2.value,
+    options: {
+      plugins: {
+        legend: {
+          display: false,
+        },
+      },
+    },
+  });
 });
 
 onBeforeUnmount(() => {
@@ -120,7 +152,10 @@ onBeforeUnmount(() => {
 });
 </script>
 <style scoped>
-.airlines-info {
+.chart__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .airlines-info__wrapper {
   display: flex;
