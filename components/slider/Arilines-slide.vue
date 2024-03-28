@@ -1,28 +1,54 @@
 <template>
   <div class="airlines__slide">
     <div class="airlines-info">
+      <h1 class="text-4xl mb-5">
+        Данные об авикомпании
+        <!-- {{ apiData.airline_ratings[index]?.airlineIataCode }} -->
+      </h1>
       <div class="airlines-info__wrapper">
         <div class="airlines-info__column">
           <div class="airlines__block">
             <h2 class="text-2xl mb-3">Таблица с данными</h2>
+            <div class="airlines__table table-airlines">
+              <div class="table-airlines__row">
+                <div class="table-airlines__title">Количество полётов</div>
+                <div class="table-airlines__row"></div>
+              </div>
+              <div class="table-airlines__row">
+                <div class="table-airlines__title">Количество полётов</div>
+                <div class="table-airlines__row"></div>
+              </div>
+              <div class="table-airlines__row">
+                <div class="table-airlines__title">Количество полётов</div>
+                <div class="table-airlines__row"></div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="airlines-info__column">
           <div class="airlines__block">
             <h2 class="text-2xl mb-3">Рейтинг авиакомпании</h2>
-            <div class="airlines__rating text-6xl mb-3">0.9 / 1</div>
-            <div class="rating-sub">
-              <div class="rating-sub__text">Рейтинг отправления</div>
-              <div class="rating-sub__info">0.4</div>
+            <div class="airlines__rating text-6xl mb-3">
+              <!-- {{ apiData.airline_ratings[0].midRating }} -->
             </div>
             <div class="rating-sub">
               <div class="rating-sub__text">Рейтинг отправления</div>
-              <div class="rating-sub__info">0.4</div>
+              <div class="rating-sub__info">
+                <!-- {{ apiData.airline_ratings[index]?.departureRating }} -->
+              </div>
+            </div>
+            <div class="rating-sub">
+              <div class="rating-sub__text">Рейтинг отправления</div>
+              <div class="rating-sub__info">
+                <!-- {{ apiData.airline_ratings[index]?.arrivalRating }} -->
+              </div>
             </div>
           </div>
           <div class="airlines__block">
             <h2 class="text-2xl mb-3">Диаграмма</h2>
-            <canvas class="pie-chart" ref="chartCanvas"></canvas>
+            <div class="chart__wrapper">
+              <canvas class="pie-chart" ref="chartCanvas"></canvas>
+            </div>
           </div>
         </div>
       </div>
@@ -30,16 +56,24 @@
   </div>
 </template>
 <script setup>
+defineProps({
+  apiData: Object,
+  index: Number,
+});
+
+// const delays = apiData.arrivalRating;
+// const onTime = apiData.offTimeDepartures;
+
 import { ref, onMounted, onBeforeUnmount } from "vue";
 import Chart from "chart.js/auto";
 
 const chartData = ref({
-  labels: ["Количество опозданий  ", "Количество прибытий во время "],
+  labels: ["Количество опозданий ", "Количество прибытий во время "],
   datasets: [
     {
-      label: "My First Dataset",
-      data: [300, 50],
-      backgroundColor: ["rgb(255, 99, 132)", "rgb(54, 162, 235)"],
+      label: "Количество",
+      data: [100, 50],
+      backgroundColor: ["#5473E8", "rgb(54, 162, 235)"],
     },
   ],
 });
@@ -51,6 +85,13 @@ onMounted(() => {
   myChart = new Chart(chartCanvas.value, {
     type: "pie",
     data: chartData.value,
+    options: {
+      plugins: {
+        legend: {
+          display: false,
+        },
+      },
+    },
   });
 });
 

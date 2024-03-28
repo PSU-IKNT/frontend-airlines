@@ -9,14 +9,8 @@
     }"
     class="main-slider__slider"
   >
-    <swiper-slide>
-      <ArilinesSlide />
-    </swiper-slide>
-    <swiper-slide>
-      <ArilinesSlide />
-    </swiper-slide>
-    <swiper-slide>
-      <ArilinesSlide />
+    <swiper-slide v-if="data">
+      <ArilinesSlide :index="0" :data="data.value" />
     </swiper-slide>
   </swiper>
 </template>
@@ -29,6 +23,22 @@ import "swiper/css/pagination";
 
 const modules = [Pagination];
 import ArilinesSlide from "./Arilines-slide.vue";
+import axios from "axios";
+
+const data = ref(null);
+const error = ref(null);
+
+axios
+  .get("http://85.193.81.44:8085/api/v2/overall_rating")
+  .then((response) => {
+    data.value = response.data;
+    console.log(data.value);
+    console.log(data.value);
+  })
+  .catch((err) => {
+    error.value = err;
+    console.error("Error fetching data:", err);
+  });
 </script>
 <style scoped>
 .main-slider__slider {

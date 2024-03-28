@@ -1,5 +1,4 @@
 <template>
-  <h1 class="text-4xl mb-5">Данные об авикомпании S7</h1>
   <AirlinesSlider />
 </template>
 
