@@ -12,7 +12,7 @@
             <h2 class="text-2xl mb-3">Таблица с данными</h2>
             <div class="airlines__table table-airlines">
               <div class="table-airlines__row">
-                <div class="table-airlines__title">Количество полётов</div>
+                <div class="table-airlines__title">Общее количество полётов</div>
                 <div class="table-airlines__info">
                   {{ apiData.airline_ratings[index].totalFlights }}
                 </div>
@@ -91,7 +91,7 @@ import Chart from "chart.js/auto";
 const chartData = ref({
   labels: [
     "Количество задержек в отправлении ",
-    "Количество отправлений во время ",
+    "Количество отправлений вовремя ",
   ],
   datasets: [
     {
@@ -102,7 +102,7 @@ const chartData = ref({
   ],
 });
 const chartData2 = ref({
-  labels: ["Количество опозданий в прибытии ", "Количество прибытий во время "],
+  labels: ["Количество опозданий в прибытии ", "Количество прибытий вовремя "],
   datasets: [
     {
       label: "Количество",

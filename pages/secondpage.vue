@@ -59,7 +59,7 @@
             class="flex items-center justify-center gap-2 cursor-pointer select-none"
             @click="sortByAlphabet('arrivalAirport')"
           >
-            <div class="max-w-28 text-center">Место вылета</div>
+            <div class="max-w-28 text-center">Аэропорт отправления</div>
             <svg
               width="16"
               height="8"
@@ -83,7 +83,7 @@
             class="flex items-center justify-center gap-2 cursor-pointer select-none"
             @click="sortByAlphabet('departureAirport')"
           >
-            <div class="max-w-28 text-center">Место посадки</div>
+            <div class="max-w-28 text-center">Аэропорт прибытия</div>
             <svg
               width="16"
               height="8"
@@ -107,7 +107,7 @@
             class="flex items-center justify-center gap-2 cursor-pointer select-none"
             @click="sortByAlphabet('factArrival')"
           >
-            <div class="max-w-28 text-center">Фактическое прибытие</div>
+            <div class="max-w-28 text-center">Фактическое время прилёта</div>
             <svg
               width="16"
               height="8"
@@ -131,7 +131,7 @@
             class="flex items-center justify-center gap-2 cursor-pointer select-none"
             @click="sortByAlphabet('factDeparture')"
           >
-            <div class="max-w-28 text-center">Фактические отъезд</div>
+            <div class="max-w-28 text-center">Фактическое время вылета</div>
             <svg
               width="16"
               height="8"
@@ -155,7 +155,7 @@
             class="flex items-center justify-center gap-2 cursor-pointer select-none"
             @click="sortByAlphabet('planArrival')"
           >
-            <div class="max-w-28 text-center">Планируемое прибытие</div>
+            <div class="max-w-28 text-center">Планируемое время прилёта</div>
             <svg
               width="16"
               height="8"
@@ -179,7 +179,7 @@
             class="flex items-center justify-center gap-2 cursor-pointer select-none"
             @click="sortByAlphabet('planDeparture')"
           >
-            <div class="max-w-28 text-center">Планируемый отъезд</div>
+            <div class="max-w-28 text-center">Планируемое время вылета</div>
             <svg
               width="16"
               height="8"
