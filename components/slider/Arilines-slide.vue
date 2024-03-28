@@ -13,14 +13,15 @@
             <div class="airlines__table table-airlines">
               <div class="table-airlines__row">
                 <div class="table-airlines__title">Количество полётов</div>
-                {{ apiData.airline_ratings[index].totalFlights }}
-                <div class="table-airlines__row"></div>
+                <div class="table-airlines__info">
+                  {{ apiData.airline_ratings[index].totalFlights }}
+                </div>
               </div>
               <div class="table-airlines__row">
                 <div class="table-airlines__title">
                   Количество опозданий по прибытии
                 </div>
-                <div class="table-airlines__row">
+                <div class="table-airlines__info">
                   {{ apiData.airline_ratings[index].offTimeArrivals }}
                 </div>
               </div>
@@ -28,7 +29,7 @@
                 <div class="table-airlines__title">
                   Количество отправлений не по расписанию
                 </div>
-                <div class="table-airlines__row">
+                <div class="table-airlines__info">
                   {{ apiData.airline_ratings[index].offTimeDepartures }}
                 </div>
               </div>
@@ -152,6 +153,7 @@ onBeforeUnmount(() => {
   font-size: 20px;
 }
 .rating-sub__text {
+  font-size: 20px;
 }
 
 .pie-chart {
@@ -159,5 +161,21 @@ onBeforeUnmount(() => {
   height: 250px !important;
 }
 .rating-sub__info {
+  font-size: 20px;
+}
+
+.table-airlines {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.table-airlines__row {
+  display: flex;
+  font-size: 20px;
+  gap: 20px;
+}
+.table-airlines__info {
+  font-weight: 600;
 }
 </style>
