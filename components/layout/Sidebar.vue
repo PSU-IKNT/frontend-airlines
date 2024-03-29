@@ -33,13 +33,13 @@ const pages = ref([
 	},
 	{
 		name: "page2",
-		path: "/firstpage",
+		path: "/data",
 		isClicked: false,
 		icon: "fa-solid fa-chart-pie",
 	},
 	{
 		name: "page3",
-		path: "/secondpage",
+		path: "/table",
 		isClicked: false,
 		icon: "fa-solid fa-table",
 	},
