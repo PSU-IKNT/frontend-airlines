@@ -6,22 +6,48 @@
         <div class="airlines__block">
           <h2 class="text-2xl mb-6 mt-2">Выберите путь</h2>
           <div class="airlines-select__wrapper custom-select">
-            <select v-model="selectedAirports[0]" class="airlines-select__item">
-              <option
-                v-for="(item, airport) in data?.airline_ratings[0].jsonData"
-                :key="airport"
+            <div class="custom-select__row">
+              <font-awesome-icon
+                icon="fa-solid fa-plane-departure"
+                class="icon-airlines"
+              />
+              <select
+                v-model="selectedAirports[0]"
+                class="airlines-select__item"
               >
-                {{ airport }}
-              </option>
-            </select>
-            <select v-model="selectedAirports[1]" class="airlines-select__item">
-              <option
-                v-for="(item, airport) in data?.airline_ratings[0].jsonData"
-                :key="airport"
+                <option value="" disabled hidden selected>
+                  Выберите аэропорт
+                </option>
+                <option
+                  v-for="(item, airport) in data?.airline_ratings[0].jsonData"
+                  :key="airport"
+                >
+                  {{ airport }}
+                </option>
+              </select>
+            </div>
+            <div class="custom-select__row">
+              <!-- <font-awesome-icon icon="fa-solid fa-plane-departure" /> -->
+              <font-awesome-icon
+                class="icon-airlines"
+                icon="fa-solid fa-plane-arrival"
+              />
+
+              <select
+                v-model="selectedAirports[1]"
+                class="airlines-select__item"
               >
-                {{ airport }}
-              </option>
-            </select>
+                <option value="" disabled selected hidden>
+                  Выберите аэропорт
+                </option>
+                <option
+                  v-for="(item, airport) in data?.airline_ratings[0].jsonData"
+                  :key="airport"
+                >
+                  {{ airport }}
+                </option>
+              </select>
+            </div>
           </div>
           <button
             @click="findRecommendedAirline"
@@ -57,7 +83,7 @@ import axios from "axios";
 
 const data = ref(null);
 const error = ref(null);
-const selectedAirports = ref([]);
+const selectedAirports = ref(["", ""]); // Initialize selectedAirports[0] and selectedAirports[1] with empty strings
 const recommendedAirline = ref(null);
 
 const findRecommendedAirline = async () => {
@@ -109,11 +135,12 @@ axios
 }
 
 .airlines-select__button {
-  padding: 10px 20px;
+  padding: 15px 20px;
   background-color: #5473e8;
   border-radius: 10px;
   color: #fff;
-  margin-left: 20px;
+  font-size: 20px;
+  margin-left: 40px;
 }
 
 .custom-select select {
@@ -126,10 +153,11 @@ axios
   border: 1px solid #ccc;
   border-radius: 5px;
   cursor: pointer;
+  width: 100%;
 }
 
 .custom-select::after {
-  content: "\25BC";
+  content: "";
   position: absolute;
   top: 50%;
   right: 10px;
@@ -149,5 +177,17 @@ axios
 .custom-select select:disabled {
   opacity: 0.5;
   cursor: not-allowed;
+}
+.custom-select__row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.custom-select {
+  flex: 1 1 90% !important;
+}
+
+.icon-airlines {
+  font-size: 20px;
 }
 </style>

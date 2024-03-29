@@ -10,10 +10,6 @@
 </template>
 
 <style scoped>
-.my-grid {
-  /* display: grid; */
-  /* grid-template-columns: 1fr 25fr; */
-}
 .my-white-bg {
   background: #f8f8f8;
   max-width: 100%;
