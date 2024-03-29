@@ -7,7 +7,7 @@
 			clickable: true,
 			dynamicBullets: true,
 		}"
-		class="main-slider__slider"
+		class="main-slider__slider flex"
 	>
 		<swiper-slide
 			v-if="data"

@@ -62,12 +62,14 @@
 					<div class="airlines__block">
 						<h2 class="text-2xl mb-3">Диаграммы</h2>
 						<div class="chart__wrapper">
-							<div class="flex flex-col gap-2 justify-center items-center">
+							<div
+								class="flex flex-col gap-2 justify-center items-center flex-wrap"
+							>
 								<div>Статистика по отправлениям</div>
 								<canvas class="pie-chart" ref="chartCanvas"></canvas>
 							</div>
 							<div class="flex flex-col gap-2 justify-center items-center">
-								<div>Статистика по отправлениям</div>
+								<div>Статистика по прибытиям</div>
 								<canvas class="pie-chart" ref="chartCanvas2"></canvas>
 							</div>
 						</div>
@@ -164,6 +166,14 @@ onBeforeUnmount(() => {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 4px;
+}
+
+@media (max-width: 900px) {
+	.chart__wrapper {
+		justify-content: center;
+	}
 }
 
 .airlines__rating {

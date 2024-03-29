@@ -4,7 +4,7 @@
     <div class="bg-white w-full rounded-3xl py-9 px-12 my-shadow">
       <div class="bg-dark-grey rounded-3xl">
         <div
-          class="flex justify-between break-words bg-grey items-center px-6 py-7 rounded-3xl custom-table__head my-table-header"
+          class="flex justify-between break-words bg-grey items-center px-6 py-7 rounded-3xl custom-table__head my-table-header overflow-x-auto"
         >
           <div
             class="flex items-center justify-center gap-2 cursor-pointer select-none"

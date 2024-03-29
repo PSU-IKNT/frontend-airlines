@@ -45,6 +45,12 @@ body {
   box-shadow: 4px 3px 12px 5px rgba(0, 0, 0, 0.24);
 }
 
+/* @media (max-width: 640px) {
+  .airlines__block {
+    padding: 4px;
+  }
+} */
+
 .swiper-wrapper {}
 
 .swiper-horizontal > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic .swiper-pagination-bullet,
@@ -74,9 +80,16 @@ body {
   padding: 0px 65px 20px 65px;
 }
 
+@media (max-width: 640px) {
+  .content__slide {
+    padding: 0px 15px 20px 15px;
+  }
+}
+
 .airlines-info__wrapper {
   display: flex;
   align-items: start;
+  flex-wrap: wrap;
   justify-content: space-between;
   gap: 45px;
 }
