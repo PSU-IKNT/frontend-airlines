@@ -15,9 +15,6 @@
 				</LayoutSidebarItem>
 			</NuxtLink>
 		</div>
-		<!-- <NuxtLink class="self-end min-w-[90%] rounded-l-lg" to="/firstpage">
-      <LayoutSidebarItem />
-    </NuxtLink> -->
 	</aside>
 </template>
 
