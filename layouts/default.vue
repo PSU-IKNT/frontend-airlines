@@ -17,4 +17,9 @@
   margin: 0 auto;
   margin-left: 90px;
 }
+@media (max-width: 640px) {
+  .my-white-bg {
+    margin: 0;
+  }
+}
 </style>

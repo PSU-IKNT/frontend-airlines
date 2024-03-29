@@ -51,10 +51,14 @@ body {
   }
 } */
 
-.swiper-wrapper {}
+.swiper-wrapper {
+}
 
-.swiper-horizontal > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic .swiper-pagination-bullet,
-.swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic .swiper-pagination-bullet {
+.swiper-horizontal
+  > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic
+  .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic
+  .swiper-pagination-bullet {
   padding: 15px;
   background: #5473e8;
 }
@@ -83,6 +87,21 @@ body {
 @media (max-width: 640px) {
   .content__slide {
     padding: 0px 15px 20px 15px;
+  }
+  .menu {
+    position: relative;
+    height: 85px;
+    max-width: 100%;
+    padding-top: 0;
+  }
+
+  .router-link-active {
+  }
+}
+
+@media (max-width: 440px) {
+  .airlines__block {
+    padding: 20px;
   }
 }
 
