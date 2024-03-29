@@ -76,3 +76,20 @@ body {
 .content__slide {
   padding: 0px 65px 20px 65px;
 }
+
+.airlines-info__wrapper {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 45px;
+}
+.airlines-info__column {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 45%;
+  gap: 45px;
+  align-self: stretch;
+}
+.airlines__block {
+  height: 100%;
+}

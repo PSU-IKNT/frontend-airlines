@@ -12,7 +12,9 @@
             <h2 class="text-2xl mb-3">Таблица с данными</h2>
             <div class="airlines__table table-airlines">
               <div class="table-airlines__row">
-                <div class="table-airlines__title">Общее количество полётов</div>
+                <div class="table-airlines__title">
+                  Общее количество полётов
+                </div>
                 <div class="table-airlines__info">
                   {{ apiData.airline_ratings[index].totalFlights }}
                 </div>
@@ -156,22 +158,6 @@ onBeforeUnmount(() => {
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-.airlines-info__wrapper {
-  display: flex;
-  align-items: start;
-  justify-content: space-between;
-  gap: 45px;
-}
-.airlines-info__column {
-  display: flex;
-  flex-direction: column;
-  flex: 1 1 45%;
-  gap: 45px;
-  align-self: stretch;
-}
-.airlines__block {
-  height: 100%;
 }
 
 .airlines__rating {
