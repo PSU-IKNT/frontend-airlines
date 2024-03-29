@@ -1,112 +1,3 @@
-<!-- <template>
-  <div class="content__slide">
-    <h1 class="text-4xl mb-5">Выбор оптимального пути</h1>
-    <div class="airlines-info__wrapper">
-      <div class="airlines-info__column">
-        <div class="airlines__block">
-          <h2 class="text-2xl mb-6 mt-2">Выберите путь</h2>
-          <div class="airlines-select__wrapper">
-            <select v-model="selectedAirports[0]" class="airlines-select__item">
-              <option
-                v-for="(item, airport) in data?.airline_ratings[0].jsonData"
-                :key="airport"
-              >
-                {{ airport }}
-              </option>
-            </select>
-            <select v-model="selectedAirports[1]" class="airlines-select__item">
-              <option
-                v-for="(item, airport) in data?.airline_ratings[0].jsonData"
-                :key="airport"
-              >
-                {{ airport }}
-              </option>
-            </select>
-          </div>
-          <button @click="compareAirlines" class="airlines-select__button">
-            Сравнить авиакомпании
-          </button>
-        </div>
-      </div>
-      <div class="airlines-info__column">
-        <div class="airlines__block">
-          <h2 class="text-2xl mb-6 mt-2">Результаты</h2>
-          <div v-if="comparisonResult">
-						<div class="" v-if="comparisonResult">
-						</div>
-            <p>
-              Авиакомпания с наибольшим количеством успешных вылетов:
-              {{ comparisonResult.departuresWinner }}
-            </p>
-            <p>
-              Количество успешных вылетов: {{ comparisonResult.departures }}
-            </p>
-            <p>
-              Авиакомпания с наибольшим количеством успешных прилетов:
-              {{ comparisonResult.arrivalsWinner }}
-            </p>
-            <p>Количество успешных прилетов: {{ comparisonResult.arrivals }}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</template>
-<script setup>
-import { ref } from "vue";
-import axios from "axios";
-
-const data = ref(null);
-const error = ref(null);
-const selectedAirports = ref([]);
-const comparisonResult = ref(null);
-
-const compareAirlines = async () => {
-  const airport0 = selectedAirports.value[0];
-  const airport1 = selectedAirports.value[1];
-
-  const airlines0 = data.value.airline_ratings[0].jsonData[airport0];
-  const airlines1 = data.value.airline_ratings[0].jsonData[airport1];
-
-  let departuresWinner = null;
-  let departures = 0;
-  let arrivalsWinner = null;
-  let arrivals = 0;
-
-  for (const airline in airlines0) {
-    if (airlines0[airline].onTimeDepartures > departures) {
-      departuresWinner = airline;
-      departures = airlines0[airline].onTimeDepartures;
-    }
-  }
-
-  for (const airline in airlines1) {
-    if (airlines1[airline].onTimeArrivals > arrivals) {
-      arrivalsWinner = airline;
-      arrivals = airlines1[airline].onTimeArrivals;
-    }
-  }
-
-  if (departuresWinner > arrivalsWinner) {
-    comparisonResult.value = {
-      departuresWinner,
-      departures,
-      arrivalsWinner,
-      arrivals,
-    };
-  }
-};
-
-axios
-  .get("http://85.193.81.44:8085/api/v2/airline_ratings_by_airports")
-  .then((response) => {
-    data.value = response.data;
-  })
-  .catch((err) => {
-    error.value = err;
-    console.error("Error fetching data:", err);
-  });
-</script> -->
 <template>
   <div class="content__slide">
     <h1 class="text-4xl mb-5">Выбор оптимального пути</h1>
@@ -114,7 +5,7 @@ axios
       <div class="airlines-info__column">
         <div class="airlines__block">
           <h2 class="text-2xl mb-6 mt-2">Выберите путь</h2>
-          <div class="airlines-select__wrapper">
+          <div class="airlines-select__wrapper custom-select">
             <select v-model="selectedAirports[0]" class="airlines-select__item">
               <option
                 v-for="(item, airport) in data?.airline_ratings[0].jsonData"
@@ -162,7 +53,6 @@ axios
   </div>
 </template>
 <script setup>
-import { ref } from "vue";
 import axios from "axios";
 
 const data = ref(null);
@@ -224,5 +114,40 @@ axios
   border-radius: 10px;
   color: #fff;
   margin-left: 20px;
+}
+
+.custom-select select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: none;
+  background-color: transparent;
+  padding-right: 30px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.custom-select::after {
+  content: "\25BC";
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.custom-select select:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.custom-select select option:hover {
+  background-color: #f2f2f2;
+}
+
+.custom-select select:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 </style>
