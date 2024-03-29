@@ -199,8 +199,6 @@ axios
   font-size: 20px;
 }
 
-.recommeded-airline {
-}
 .recommeded-airline__title {
   font-size: 22px;
   margin-bottom: 20px;
@@ -210,7 +208,7 @@ axios
   font-weight: 600;
 }
 .recommeded-airline__info {
-  font-size: 18px;
+  font-size: 20px;
   margin-bottom: 10px;
 }
 </style>
