@@ -27,7 +27,6 @@
               </select>
             </div>
             <div class="custom-select__row">
-              <!-- <font-awesome-icon icon="fa-solid fa-plane-departure" /> -->
               <font-awesome-icon
                 class="icon-airlines"
                 icon="fa-solid fa-plane-arrival"
@@ -60,17 +59,21 @@
       <div class="airlines-info__column">
         <div class="airlines__block">
           <h2 class="text-2xl mb-6 mt-2">Результаты</h2>
-          <div v-if="recommendedAirline">
-            <p>
-              Рекомендованная авиакомпания: {{ recommendedAirline.airline }}
+          <!-- <div v-if="recommendedAirline" class="recommeded-airline"> -->
+          <div class="recommeded-airline">
+            <p class="recommeded-airline__title">
+              Рекомендованная авиакомпания:
+              <span>
+                <!-- {{ recommendedAirline.airline }} -->
+              </span>
             </p>
-            <p>
+            <p class="recommeded-airline__info">
               Количество успешных вылетов:
-              {{ recommendedAirline.onTimeDepartures }}
+              <!-- {{ recommendedAirline.onTimeDepartures }} -->
             </p>
-            <p>
+            <p class="recommeded-airline__info">
               Количество успешных прилетов:
-              {{ recommendedAirline.onTimeArrivals }}
+              <!-- {{ recommendedAirline.onTimeArrivals }} -->
             </p>
           </div>
         </div>
@@ -189,5 +192,20 @@ axios
 
 .icon-airlines {
   font-size: 20px;
+}
+
+.recommeded-airline {
+}
+.recommeded-airline__title {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.recommeded-airline__title span {
+  font-weight: 600;
+}
+.recommeded-airline__info {
+  font-size: 18px;
+  margin-bottom: 10px;
 }
 </style>
