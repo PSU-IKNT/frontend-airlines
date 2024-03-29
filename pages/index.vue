@@ -27,7 +27,6 @@
               </select>
             </div>
             <div class="custom-select__row">
-              <!-- <font-awesome-icon icon="fa-solid fa-plane-departure" /> -->
               <font-awesome-icon
                 class="icon-airlines"
                 icon="fa-solid fa-plane-arrival"
@@ -61,16 +60,24 @@
         <div class="airlines__block">
           <h2 class="text-2xl mb-6 mt-2">Результаты</h2>
           <div v-if="recommendedAirline">
-            <p>
-              Рекомендованная авиакомпания: {{ recommendedAirline.airline }}
+            <p class="recommeded-airline__title">
+              Рекомендованная авиакомпания:
+              <span>
+                {{ recommendedAirline.airline }}
+              </span>
             </p>
-            <p>
+            <p class="recommeded-airline__info">
               Количество успешных вылетов:
               {{ recommendedAirline.onTimeDepartures }}
             </p>
-            <p>
+            <p class="recommeded-airline__info">
               Количество успешных прилетов:
               {{ recommendedAirline.onTimeArrivals }}
+            </p>
+          </div>
+          <div v-else class="recommeded-airline__await">
+            <p class="recommeded-airline__info">
+              Здесь будут данные по Рекомендованной авиакомпании
             </p>
           </div>
         </div>
