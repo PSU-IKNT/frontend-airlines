@@ -62,8 +62,14 @@
 					<div class="airlines__block">
 						<h2 class="text-2xl mb-3">Диаграммы</h2>
 						<div class="chart__wrapper">
-							<canvas class="pie-chart" ref="chartCanvas"></canvas>
-							<canvas class="pie-chart" ref="chartCanvas2"></canvas>
+							<div class="flex flex-col gap-2 justify-center items-center">
+								<div>Статистика по отправлениям</div>
+								<canvas class="pie-chart" ref="chartCanvas"></canvas>
+							</div>
+							<div class="flex flex-col gap-2 justify-center items-center">
+								<div>Статистика по отправлениям</div>
+								<canvas class="pie-chart" ref="chartCanvas2"></canvas>
+							</div>
 						</div>
 					</div>
 				</div>
