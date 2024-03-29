@@ -179,7 +179,7 @@ pages.value.forEach((page) => {
   }
 
   .menu-link {
-    border-radius: 0px 0px 20px 20px;
+    border-radius: 0px 0px 0px 0px !important;
   }
 }
 </style>
