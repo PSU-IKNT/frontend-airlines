@@ -1,5 +1,5 @@
 <template>
-  <section class="my-grid min-h-screen">
+  <section class="my-grid min-h-screen my-blue-bg">
     <LayoutSidebar />
     <div class="my-white-bg">
       <div class="container">

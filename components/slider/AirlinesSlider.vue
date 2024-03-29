@@ -14,7 +14,7 @@
 			v-for="(item, index) in data.airline_ratings"
 			:key="index"
 		>
-			<ArilinesSlide :index="index" :apiData="data" />
+			<AirlinesSlide :index="index" :apiData="data" />
 		</swiper-slide>
 	</swiper>
 </template>
@@ -26,7 +26,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 const modules = [Pagination];
-import ArilinesSlide from "./AirlinesSlide.vue";
+import AirlinesSlide from "./AirlinesSlide.vue";
 import axios from "axios";
 
 const data = ref(null);

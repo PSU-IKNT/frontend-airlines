@@ -1,5 +1,7 @@
 <template>
-	<aside class="my-blue-bg flex flex-col items-end py-2 flex-auto menu">
+	<aside
+		class="my-blue-bg flex flex-col items-end py-2 flex-auto menu h-screen"
+	>
 		<div class="menu-wrapper">
 			<NuxtLink
 				v-for="page in pages"

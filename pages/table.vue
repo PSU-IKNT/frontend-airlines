@@ -1,7 +1,7 @@
 <template>
 	<div class="content__slide">
 		<h1 class="text-4xl mb-5">Таблица</h1>
-		<div class="bg-white w-full rounded-3xl py-9 px-12">
+		<div class="bg-white w-full rounded-3xl py-9 px-12 my-shadow">
 			<h2 class="text-2xl mb-6 mt-2">Таблица с данными</h2>
 			<div class="bg-dark-grey rounded-3xl">
 				<div
@@ -322,5 +322,8 @@ const sortOptions = reactive({
 }
 .custom-table__head {
 	border-radius: 1.5rem 1.75rem 0px 0px;
+}
+.my-shadow {
+	box-shadow: 4px 3px 12px 5px rgba(0, 0, 0, 0.24);
 }
 </style>
