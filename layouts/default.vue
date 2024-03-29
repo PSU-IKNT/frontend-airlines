@@ -1,24 +1,24 @@
 <template>
-  <section class="my-grid min-h-screen">
-    <LayoutSidebar />
-    <div class="my-white-bg">
-      <div class="container">
-        <slot />
-      </div>
-    </div>
-  </section>
+	<section class="my-grid min-h-screen my-blue-bg">
+		<LayoutSidebar />
+		<div class="my-white-bg">
+			<div class="container">
+				<slot />
+			</div>
+		</div>
+	</section>
 </template>
 
 <style scoped>
 .my-grid {
-  /* display: grid; */
-  /* grid-template-columns: 1fr 25fr; */
+	/* display: grid; */
+	/* grid-template-columns: 1fr 25fr; */
 }
 .my-white-bg {
-  background: #f8f8f8;
-  max-width: 100%;
-  min-height: 100vh;
-  margin: 0 auto;
-  margin-left: 90px;
+	background: #f8f8f8;
+	max-width: 100%;
+	min-height: 100vh;
+	margin: 0 auto;
+	margin-left: 90px;
 }
 </style>
