@@ -77,7 +77,7 @@
 					</div>
 					<div v-else class="recommeded-airline__await">
 						<p class="recommeded-airline__info text-center md:mt-24 mt-6">
-							Здесь будут данные по Рекомендованной авиакомпании...
+							Здесь будут данные по рекомендованной авиакомпании...
 						</p>
 					</div>
 				</div>
@@ -165,7 +165,7 @@ axios
 	font-size: 20px;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
 	.custom-select select {
 		font-size: 15px;
 	}

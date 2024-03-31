@@ -2,7 +2,7 @@
 	<div class="content__slide">
 		<!-- <div>Подождите, идет загрузка данных</div> -->
 		<div class="airlines-info">
-			<h1 class="text-4xl mb-5">
+			<h1 class="md:text-4xl text-3xl mb-5">
 				Данные об авикомпании
 				{{ apiData.airline_ratings[index].airlineIataCode }}
 			</h1>
@@ -165,9 +165,9 @@ onBeforeUnmount(() => {
 .chart__wrapper {
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
+	justify-content: center;
 	flex-wrap: wrap;
-	gap: 4px;
+	gap: 16px;
 }
 
 @media (max-width: 900px) {
