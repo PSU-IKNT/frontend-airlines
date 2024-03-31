@@ -41,7 +41,7 @@
 				<div class="airlines-info__column">
 					<div class="airlines__block">
 						<h2 class="text-2xl mb-3">Рейтинг авиакомпании</h2>
-						<div class="airlines__rating text-6xl mb-3">
+						<div class="airlines__rating text-3xl md:text-6xl mb-3">
 							{{ roundRating(apiData.airline_ratings[index].midRating) }}%
 						</div>
 						<div class="rating-sub">
