@@ -95,6 +95,18 @@ body {
   .container {
     padding: 40px 0px 0px 0px;
   }
+  .recommeded-airline__title,
+  .table-airlines__title {
+    font-size: 18px !important;
+  }
+  .recommeded-airline__info,
+  .table-airlines__info {
+    font-size: 18px !important;
+  }
+  .airlines-info__column,
+  .airlines-info__wrapper {
+    gap: 25px !important;
+  }
 }
 
 .airlines-info__wrapper {
